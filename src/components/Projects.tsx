@@ -157,6 +157,9 @@ const Projects = () => {
                     <motion.img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      width="800"
+                      height="600"
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.15 }}
                       transition={{ duration: 0.5 }}

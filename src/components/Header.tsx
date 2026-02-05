@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, Home, User, Code2, Briefcase, Mail } from 'lucide-react';
+import { Menu, X,Home, User, Code2, Briefcase, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
@@ -77,30 +77,33 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item, index) => (
-              <motion.button
+              <motion.a
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href);
+                }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 relative groupC ${
+                className={`px-4 py-2 rounded-xl font-semibold transition-all duration-300 relative groupC flex items-center space-x-2 ${
                   activeSection === item.href.slice(1)
                     ? 'text-white bg-white/10 border border-white/10'
                     : 'text-text-secondary hover:text-white hover:bg-white/5'
                 }`}
+                aria-label={`Navigate to ${item.label}`}
               >
-                <span className="flex items-center space-x-2">
-                  <motion.div
-                    animate={{ rotate: activeSection === item.href.slice(1) ? [0, 10, -10, 0] : 0 }}
-                    transition={{ duration: 0.5 }}
-                    className={activeSection === item.href.slice(1) ? 'text-primary-light' : ''}
-                  >
-                    <item.icon size={18} />
-                  </motion.div>
-                  <span>{item.label}</span>
-                </span>
+                <motion.div
+                  animate={{ rotate: activeSection === item.href.slice(1) ? [0, 10, -10, 0] : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className={activeSection === item.href.slice(1) ? 'text-primary-light' : ''}
+                >
+                  <item.icon size={18} />
+                </motion.div>
+                <span>{item.label}</span>
                 <AnimatePresence>
                   {activeSection === item.href.slice(1) && (
                     <motion.div 
@@ -111,7 +114,7 @@ const Header = () => {
                     />
                   )}
                 </AnimatePresence>
-              </motion.button>
+              </motion.a>
             ))}
             
   
@@ -123,6 +126,7 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            aria-label="Toggle Navigation Menu"
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (

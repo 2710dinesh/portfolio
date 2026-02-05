@@ -44,14 +44,14 @@ const Hero = () => {
               className="text-6xl md:text-8xl font-black text-text-primary mb-6 leading-tight font-serif" 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             >
               Hi, I'm{' '}
               <motion.span 
                 className="text-shimmer"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+                transition={{ delay: 0.6, type: "spring", stiffness: 100, damping: 15 }}
                 whileHover={{ scale: 1.1 }}
               >
                 Dinesh R
@@ -62,7 +62,7 @@ const Hero = () => {
               className="text-2xl md:text-4xl text-text-secondary mb-4 h-12 flex items-center justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
             >
               <TypingAnimation 
                 texts={roles}
@@ -79,7 +79,7 @@ const Hero = () => {
             className="text-xl md:text-2xl text-text-muted mb-12 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
           >
             Aspiring Full-Stack Developer passionate about building scalable web applications and AI driven solutions.
           </motion.p>
@@ -89,17 +89,17 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.6 }}
+            transition={{ delay: 1.2, duration: 0.8, ease: "easeOut" }}
           >
             <motion.button 
               className="btn-primary group flex items-center gap-3"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
               <motion.div
                 animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
                 <Download size={20} />
               </motion.div>
@@ -110,12 +110,12 @@ const Hero = () => {
               className="btn-secondary group flex items-center gap-3"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
               <span>Learn More</span>
               <motion.div
                 animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
                 <ArrowDown size={16} />
               </motion.div>
@@ -127,7 +127,7 @@ const Hero = () => {
             className="flex justify-center space-x-8 mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
           >
             {[
               { icon: Github, href: 'https://github.com/2710dinesh', label: 'GitHub' },
@@ -141,7 +141,7 @@ const Hero = () => {
                 aria-label={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.5 + index * 0.1, duration: 0.4 }}
+                transition={{ delay: 1.5 + index * 0.1, duration: 0.5, ease: "easeOut" }}
                 whileHover={{ scale: 1.2, y: -5, rotate: [0, -10, 10, 0] }}
                 whileTap={{ scale: 0.9 }}
               >

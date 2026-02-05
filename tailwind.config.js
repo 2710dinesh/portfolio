@@ -20,7 +20,7 @@ export default {
         text: {
           primary: '#A7EBF2', // Lightest Blue
           secondary: '#54ACBF', // Light Blue
-          muted: '#26658C', // Medium Blue
+          muted: '#88C0D0', // Lighter Blue for better contrast (was #26658C)
         },
         theme: {
           lightest: '#A7EBF2',
