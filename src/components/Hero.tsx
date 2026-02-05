@@ -42,9 +42,9 @@ const Hero = () => {
           >
             <motion.h1 
               className="text-6xl md:text-8xl font-black text-text-primary mb-6 leading-tight font-serif" 
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeOut" }} // Removed delay
+              transition={{ duration: 0.5, ease: "easeOut" }} // Optimized for LCP
             >
               Hi, I'm{' '}
               <motion.span 
