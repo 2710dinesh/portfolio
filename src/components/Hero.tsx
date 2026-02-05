@@ -36,15 +36,15 @@ const Hero = () => {
           {/* Professional greeting */}
           <motion.div 
             className="mb-8"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }} // Visible by default for LCP
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ duration: 0.6 }}
           >
             <motion.h1 
               className="text-6xl md:text-8xl font-black text-text-primary mb-6 leading-tight font-serif" 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }} // Removed delay
             >
               Hi, I'm{' '}
               <motion.span 
