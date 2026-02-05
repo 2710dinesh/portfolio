@@ -202,6 +202,7 @@ const Projects = () => {
                           whileHover={{ scale: 1.2, rotate: 360 }}
                           whileTap={{ scale: 0.9 }}
                           transition={{ duration: 0.3 }}
+                          aria-label={`View ${project.title} source code`}
                         >
                           <Github size={20} className="text-white" />
                         </motion.a>
@@ -211,6 +212,7 @@ const Projects = () => {
                           whileHover={{ scale: 1.2, rotate: 360 }}
                           whileTap={{ scale: 0.9 }}
                           transition={{ duration: 0.3 }}
+                          aria-label={`View ${project.title} live demo`}
                         >
                           <ExternalLink size={20} className="text-white" />
                         </motion.a>

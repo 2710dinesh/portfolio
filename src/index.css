@@ -133,7 +133,7 @@ body {
 
 /* Professional button styles */
 .btn-primary {
-  @apply bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50;
+  @apply bg-primary hover:bg-primary-hover text-surface px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50;
   will-change: transform, box-shadow;
 }
 

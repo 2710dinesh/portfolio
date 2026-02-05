@@ -193,23 +193,24 @@ const Hero = () => {
           transition={{ delay: 2, duration: 0.6 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          aria-label="Scroll to About section"
         >
           <div className="flex flex-col items-center gap-2">
-            {/* <motion.span 
+            <motion.span 
               className="text-sm font-medium"
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
               Scroll Down
-            </motion.span> */}
-            {/* <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center">
+            </motion.span>
+            <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center">
               <motion.div 
                 className="w-1 h-3 bg-current rounded-full mt-2"
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               />
-            </div> */}
+            </div>
           </div>
         </motion.button>
       </div>
